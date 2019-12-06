@@ -1,0 +1,72 @@
+{
+  "blocks": [
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": ":mag: Search for a service"
+      }
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*<fakeLink.toYourApp.com|Use Case Catalogue>*\nUse Case Catalogue for the following departments/roles..."
+      },
+      "accessory": {
+        "type": "static_select",
+        "placeholder": {
+          "type": "plain_text",
+          "emoji": true,
+          "text": "Manage"
+        },
+        "options": [
+          {
+            "text": {
+              "type": "plain_text",
+              "emoji": true,
+              "text": "Edit it"
+            },
+            "value": "value-0"
+          },
+          {
+            "text": {
+              "type": "plain_text",
+              "emoji": true,
+              "text": "Read it"
+            },
+            "value": "value-1"
+          },
+          {
+            "text": {
+              "type": "plain_text",
+              "emoji": true,
+              "text": "Save it"
+            },
+            "value": "value-2"
+          }
+        ]
+      }
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "actions",
+      "elements": [
+        {
+          "type": "button",
+          "text": {
+            "type": "plain_text",
+            "emoji": true,
+            "text": "Next 5 Results"
+          },
+          "value": "click_me_123"
+        }
+      ]
+    }
+  ]
+}

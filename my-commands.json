@@ -1,0 +1,4 @@
+{
+  "perform an action": "sudo systemctl restart uuidd",
+  "get service status": "sudo systemctl status uuidd"
+}
