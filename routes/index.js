@@ -1,26 +1,13 @@
 const express = require('express');
 const router = express.Router();
 const cron = require('node-cron');
-const mysql = require('mysql');
+const connection = require("../database/connection.js");
 let exec = require('sync-exec');
 
 
-const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'service_monitor'
-});
-
-connection.connect(err => {
-  if (err)
-    throw err;
-  else console.log("MySQL connected...");
-});
-
 const slackBot = require('slackbots');
 const bot = new slackBot({
-  token: 'xoxb-802339229714-847389333906-aEJVHuzxrrdgjXEImg281gtH',
+  token: 'xoxb-802339229714-847389333906-zvFIshL5qMAKejRWNIkgbCsw',
   name: 'service_monitor_bot'
 });
 
@@ -42,7 +29,6 @@ router.post('/useraction', (req, res, next) => {
 let notifiedFailedServices = [""];
 
 cron.schedule('* * * * * *', () => {
-
   connection.query(`SELECT name FROM services`, (error, results, fields) => {
     if (error) throw error;
     let service;
